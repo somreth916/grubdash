@@ -9,6 +9,7 @@ This is a project that works with backend express API and uses get, put, update,
 ## Technology
 - React
 - JavaScript
+- Postgres SQL
 - Express
 
 #### This is a backend server for a food service app that was built as a way to implicate the express routers and controllers.
