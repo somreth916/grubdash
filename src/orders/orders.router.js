@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { route } = require("../dishes/dishes.router");
 const methodNotAllowed = require("../errors/methodNotAllowed");
 const controller = require("./orders.controller");
 // TODO: Implement the /orders routes needed to make the tests pass
@@ -7,7 +6,8 @@ const controller = require("./orders.controller");
 router
     .route("/")
     .get(controller.list)
-    .post(controller.create);
+    .post(controller.create)
+    .all(methodNotAllowed);
 
 router
     .route("/:orderId")

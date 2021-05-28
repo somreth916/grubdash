@@ -32,30 +32,35 @@ function isValidDish(req, res, next) {
         message: "Dish must include a name",
         status: 400,
       });
-    } else if (!description || description === "") {
+    } 
+    if (!description || description === "") {
       return next({
         message: "Dish must include a description",
         status: 400,
       });
-    } else if (!price) {
+    } 
+    if (!price) {
       return next({
         message: "Dish must include a price",
         status: 400,
       });
-    } else if (price <= 0 || !Number.isInteger(price)) {
+    } 
+    if (price <= 0 || !Number.isInteger(price)) {
       return next({
         message: "Dish must have a price that is an integer greater than 0",
         status: 400,
       });
-    } else if (!image_url || image_url === "") {
+    } 
+    if (!image_url || image_url === "") {
       return next({
         message: "Dish must include an image_url",
         status: 400,
       });
-    } else {
-      res.locals.validDish = req.body.data;
-      next();
     }
+
+    res.locals.validDish = req.body.data;
+    next();
+    
 }
 
 function checkDishId(req, res, next) {
